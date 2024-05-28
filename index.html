@@ -96,8 +96,7 @@
                 <li><a href="./class-details.html">Classes</a></li>
                 <li><a href="./services.html">Services</a></li>
                 <li><a href="./contact.html">Contact</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                <li><a  class="choosePlanningBtn" id="class-dropin-enroll">Login</a></li>
               </ul>
             </nav>
           </div>
@@ -106,61 +105,44 @@
           <i class="fa fa-bars"></i>
         </div>
       </div>
+            <!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="auth-section">
+          <h2>Login</h2>
+          <form id="auth-form" action="sql/login.php" method="post">
+              <label for="username" style="color: white;">Username:</label>
+              <input type="text" id="username" name="username" required>
+              <label for="password" style="color: white;">Password:</label>
+              <input type="password" id="password" name="password" required>
+              <button type="submit">Login</button>
+              <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+          </form>
+      </div>
+      <div id="signup-section" style="display: none;">
+          <h2>Sign Up</h2>
+          <form id="signup-form" action="sql/register.php" method="post">
+              <label for="new-username" style="color: white;">Username:</label>
+              <input type="text" id="new-username" name="username" required>
+              <label for="new-password" style="color: white;">Password:</label>
+              <input type="password" id="new-password" name="password" required>
+              <label for="email" style="color: white;">Email:</label>
+              <input type="email" id="email" name="email" required>
+              <label for="height" style="color: white;">Height (cm):</label>
+              <input type="number" id="height" name="height" required>
+              <label for="weight" style="color: white;">Weight (kg):</label>
+              <input type="number" id="weight" name="weight" required>
+              <button type="submit">Sign Up</button>
+              <p style="color: white;">Already have an account? <a href="#" id="show-login">Login</a></p>
+          </form>
+      </div>
+  </div>
+</div>
     </header>
+   
     
-    <!-- Register Modal -->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true" >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="registerModalLabel">Register</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="registerForm">
-              <div class="form-group">
-                <label for="registerEmail">Email:</label>
-                <input type="email" class="form-control" id="registerEmail" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="registerPassword">Password:</label>
-                <input type="password" class="form-control" id="registerPassword" name="password" required>
-              </div>
-              <button type="submit" class="btn btn-primary">Register</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
     
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="loginForm">
-              <div class="form-group">
-                <label for="loginEmail">Email:</label>
-                <input type="email" class="form-control" id="loginEmail" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="loginPassword">Password:</label>
-                <input type="password" class="form-control" id="loginPassword" name="password" required>
-              </div>
-              <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Hero Section Begin -->
     <section class="hero-section">
@@ -562,7 +544,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/java.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/server.js"></script>
     
 

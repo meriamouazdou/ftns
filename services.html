@@ -300,6 +300,18 @@
                 <p style="color: white;">Already have an account? <a href="#" id="show-login">Login</a></p>
             </form>
         </div>
+        <div id="payment-section" style="display: none;">
+            <h2>Payment Information</h2>
+            <form id="payment-form">
+                <label for="cardNumber" style="color: white;">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+                <label for="expiry" style="color: white;">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" required>
+                <label for="cvv" style="color: white;">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+                <button type="submit">Complete Purchase</button>
+            </form>
+        </div>
     </div>
 </div>
 
