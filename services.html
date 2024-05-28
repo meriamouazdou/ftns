@@ -216,7 +216,7 @@
                   <li>Month to mouth</li>
                   <li>No time restriction</li>
                 </ul>
-                <button id="choosePlanningBtn">Enroll now</button>
+                <button class="choosePlanningBtn">Enroll now</button>
                 <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
               </div>
             </div>
@@ -235,7 +235,7 @@
                   <li>Month to mouth</li>
                   <li>No time restriction</li>
                 </ul>
-                <button id="choosePlanningBtn">Enroll now</button>
+                <button class="choosePlanningBtn">Enroll now</button>
                 <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
               </div>
             </div>
@@ -254,13 +254,64 @@
                   <li>Month to mouth</li>
                   <li>No time restriction</li>
                 </ul>
-                <button id="choosePlanningBtn">Enroll now</button>
+                <button class="choosePlanningBtn">Enroll now</button>
                 <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <!-- Pricing Section End -->
+    
+      <!-- Modal -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="auth-section">
+            <h2>Login</h2>
+            <form id="auth-form">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+              <button type="submit">Login</button>
+              <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+            </form>
+          </div>
+          <div id="signup-section" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+              <label for="new-username">Username:</label>
+              <input type="text" id="new-username" name="new-username" required>
+              <label for="new-password">Password:</label>
+              <input type="password" id="new-password" name="new-password" required>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              <button type="submit">Sign Up</button>
+              <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            </form>
+          </div>
+          <div id="payment-section" style="display: none;">
+            <h2>Payment Information</h2>
+            <form id="payment-form">
+              <label for="cardNumber">Card Number:</label>
+              <input type="text" id="cardNumber" name="cardNumber" required>
+              <label for="expiry">Expiry Date:</label>
+              <input type="text" id="expiry" name="expiry" required>
+              <label for="cvv">CVV:</label>
+              <input type="text" id="cvv" name="cvv" required>
+              <button type="submit">Complete Purchase</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+                 
+     
+      
+      
+
+  
     <!-- Pricing Section End -->
 
     <!-- Get In Touch Section Begin -->

@@ -1,46 +1,52 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('./models/User'); // Define the User model
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById("myModal");
+  const closeModal = document.getElementsByClassName("close")[0];
+  const authForm = document.getElementById("auth-form");
+  const paymentForm = document.getElementById("payment-form");
+  const authSection = document.getElementById("auth-section");
+  const paymentSection = document.getElementById("payment-section");
 
-const app = express();
-app.use(bodyParser.json());
+  document.querySelectorAll(".choosePlanningBtn").forEach(button => {
+    button.addEventListener("click", function() {
+      modal.style.display = "block";
+    });
+  });
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost/fitness', { useNewUrlParser: true, useUnifiedTopology: true });
-
-// Register Route
-app.post('/register', async (req, res) => {
-  const { email, password } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10);
-  const newUser = new User({ email, password: hashedPassword });
-  await newUser.save();
-  res.json({ success: true });
-});
-
-// Login Route
-app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  const user = await User.findOne({ email });
-  if (user && await bcrypt.compare(password, user.password)) {
-    const token = jwt.sign({ userId: user._id }, 'secretkey');
-    res.json({ success: true, token });
-  } else {
-    res.json({ success: false });
+  closeModal.onclick = function() {
+    modal.style.display = "none";
   }
-});
 
-// User model definition (models/User.js)
-const mongoose = require('mongoose');
-const userSchema = new mongoose.Schema({
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
-});
-module.exports = mongoose.model('User', userSchema);
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
 
-// Start server
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
+  authForm.onsubmit = function(event) {
+    event.preventDefault();
+    // Remplacer par la logique d'authentification réelle
+    const isAuthenticated = true; // Simuler le succès de l'authentification
+    if (isAuthenticated) {
+      authSection.style.display = "none";
+      paymentSection.style.display = "block";
+    } else {
+      alert("Échec de l'authentification. Veuillez réessayer.");
+    }
+  }
+
+  paymentForm.onsubmit = function(event) {
+    event.preventDefault();
+    // Collecter les détails de paiement et envoyer au serveur
+    const paymentDetails = {
+      cardNumber: document.getElementById("cardNumber").value,
+      expiry: document.getElementById("expiry").value,
+      cvv: document.getElementById("cvv").value,
+    };
+
+    // Simuler un appel serveur
+    setTimeout(() => {
+      alert("Paiement réussi !");
+      modal.style.display = "none";
+    }, 1000);
+  }
 });
