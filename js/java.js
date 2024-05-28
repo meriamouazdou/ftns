@@ -39,26 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
       authSection.style.display = "block";
   }
 
-  authForm.onsubmit = function(event) {
-      event.preventDefault();
-      const formData = new FormData(authForm);
-      fetch('login.php', {
-          method: 'POST',
-          body: formData
-      })
-      .then(response => response.text())
-      .then(data => {
-          console.log(data); // Message de débogage
-          if (data.includes("Connexion réussie")) {
-              authSection.style.display = "none";
-              paymentSection.style.display = "block";
-          } else {
-              alert("Échec de l'authentification. Veuillez réessayer.");
-          }
-      })
-      .catch(error => console.error('Erreur:', error));
-  }
-
   signupForm.onsubmit = function(event) {
       event.preventDefault();
       const formData = new FormData(signupForm);
@@ -68,12 +48,32 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => response.text())
       .then(data => {
-          console.log(data); // Message de débogage
+          console.log(data); // Debugging message
           if (data.includes("Inscription réussie")) {
               signupSection.style.display = "none";
               paymentSection.style.display = "block";
           } else {
               alert("Échec de l'inscription. Veuillez réessayer.");
+          }
+      })
+      .catch(error => console.error('Erreur:', error));
+  }
+
+  authForm.onsubmit = function(event) {
+      event.preventDefault();
+      const formData = new FormData(authForm);
+      fetch('login.php', {
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+          console.log(data); // Debugging message
+          if (data.includes("Connexion réussie")) {
+              authSection.style.display = "none";
+              paymentSection.style.display = "block";
+          } else {
+              alert("Échec de l'authentification. Veuillez réessayer.");
           }
       })
       .catch(error => console.error('Erreur:', error));
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => response.text())
       .then(data => {
-          console.log(data); // Message de débogage
+          console.log(data); // Debugging message
           alert("Paiement réussi !");
           modal.style.display = "none";
       })

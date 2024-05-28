@@ -15,4 +15,7 @@ CREATE TABLE `payments` (
     `cvv` VARCHAR(3) NOT NULL
 );
 
+ALTER TABLE `users`
+ADD COLUMN `poids` FLOAT NOT NULL,
+ADD COLUMN `taille` FLOAT NOT NULL;
 

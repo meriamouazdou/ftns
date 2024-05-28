@@ -267,48 +267,42 @@
       </section>
       <!-- Pricing Section End -->
     
+      
       <!-- Modal -->
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <div id="auth-section">
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="auth-section">
             <h2>Login</h2>
             <form id="auth-form" action="sql/login.php" method="post">
-              <label for="username" style="color: white;">Username:</label>
-              <input type="text" id="username" name="username" required>
-              <label for="password" style="color: white;">Password:</label>
-              <input type="password" id="password" name="password" required>
-              <button type="submit">Login</button>
-              <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+                <label for="username" style="color: white;">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password" style="color: white;">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
             </form>
-          </div>
-          <div id="signup-section" style="display: none;">
+        </div>
+        <div id="signup-section" style="display: none;">
             <h2>Sign Up</h2>
             <form id="signup-form" action="sql/register.php" method="post">
-              <label for="new-username"  style="color: white;">Username:</label>
-              <input type="text" id="new-username" name="new-username" required>
-              <label for="new-password"  style="color: white;">Password:</label>
-              <input type="password" id="new-password" name="new-password" required>
-              <label for="email"  style="color: white;">Email:</label>
-              <input type="email" id="email" name="email" required>
-              <button type="submit">Sign Up</button>
-              <p  style="color: white;">Already have an account? <a href="#" id="show-login">Login</a></p>
+                <label for="new-username" style="color: white;">Username:</label>
+                <input type="text" id="new-username" name="username" required>
+                <label for="new-password" style="color: white;">Password:</label>
+                <input type="password" id="new-password" name="password" required>
+                <label for="email" style="color: white;">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="height" style="color: white;">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+                <label for="weight" style="color: white;">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+                <button type="submit">Sign Up</button>
+                <p style="color: white;">Already have an account? <a href="#" id="show-login">Login</a></p>
             </form>
-          </div>
-          <div id="payment-section" style="display: none;">
-            <h2>Payment Information</h2>
-            <form id="payment-form" action="sql/payment.php" method="post">
-              <label for="cardNumber"  style="color: white;">Card Number:</label>
-              <input type="text" id="cardNumber" name="cardNumber" required>
-              <label for="expiry"  style="color: white;">Expiry Date:</label>
-              <input type="text" id="expiry" name="expiry" required>
-              <label for="cvv"  style="color: white;">CVV:</label>
-              <input type="text" id="cvv" name="cvv" required>
-              <button type="submit" >Complete Purchase</button>
-            </form>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
+
     
 
     <!-- Get In Touch Section Begin -->
