@@ -1,32 +1,29 @@
 /* The Modal (background) */
 .modal {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
+  z-index: 1001; /* Assure que le modal est au-dessus de l'overlay */
+  left: 16cm;
+  top: 5cm;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Modal Content */
+/* Modifiez la position et la taille du contenu modal */
 .modal-content {
-  background-color: #fff;
+  background-color: #2e2d2d;
   padding: 20px;
   border-radius: 10px;
   width: 400px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px orangered;
   position: relative;
 }
-
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: white;
   position: absolute;
   top: 10px;
   right: 20px;
@@ -43,6 +40,7 @@
 
 h2 {
   margin-top: 0;
+  color: white;
 }
 
 form {
@@ -62,7 +60,7 @@ form input {
 
 form button {
   padding: 10px;
-  background-color: #28a745;
+  background-color: #f36100;
   color: white;
   border: none;
   cursor: pointer;
@@ -71,7 +69,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #218838;
+  background-color: orangered;
 }
 
 form p {
@@ -86,4 +84,15 @@ form a {
 
 form a:hover {
   text-decoration: underline;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.336);
+  z-index: 1000; /* Assure que l'overlay est au-dessus du modal */
+  display: none; /* Par défaut, l'overlay est caché */
 }
