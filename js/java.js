@@ -80,18 +80,27 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   paymentForm.onsubmit = function(event) {
-      event.preventDefault();
-      const formData = new FormData(paymentForm);
-      fetch('payment.php', {
-          method: 'POST',
-          body: formData
-      })
-      .then(response => response.text())
-      .then(data => {
-          console.log(data); // Debugging message
-          alert("Paiement réussi !");
-          modal.style.display = "none";
-      })
-      .catch(error => console.error('Erreur:', error));
-  }
+    event.preventDefault();
+    const formData = new FormData(paymentForm);
+    fetch('payment.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur HTTP ' + response.status);
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log(data); // Message de débogage
+        alert("Paiement réussi !");
+        modal.style.display = "none"; // Assurez-vous que `modal` est correctement défini
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+        alert("Erreur lors du paiement. Veuillez réessayer plus tard.");
+    });
+}
+
 });

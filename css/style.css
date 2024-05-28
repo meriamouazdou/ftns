@@ -70,6 +70,7 @@ h4 {
 
 h5 {
 	font-size: 18px;
+	color: white;
 }
 
 h6 {
@@ -1514,6 +1515,7 @@ ol {
 	text-align: left;
 }
 
+
 .class-details-timetable_title {
 	margin-bottom: 35px;
 }
@@ -1591,7 +1593,7 @@ ol {
 }
 
 .class-timetable.details-timetable td h5 {
-	color: #ffffff1a;
+	color: #363636;
 }
 
 .class-timetable.details-timetable td span {

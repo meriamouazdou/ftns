@@ -4,7 +4,7 @@ header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); // Autoriser les mé
 header("Access-Control-Allow-Headers: Content-Type"); // Autoriser le type de contenu "Content-Type"
 
 include 'config.php';
-
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $username = $_POST['username'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $email = $_POST['email'];
@@ -12,7 +12,7 @@ $height = $_POST['height'];
 $weight = $_POST['weight'];
 
 $sql = "INSERT INTO users (username, password, email, poids, taille) VALUES ('$username', '$password', '$email', '$weight', '$height')";
-
+}
 if (mysqli_query($conn, $sql)) {
     echo json_encode(["success" => true]);
 } else {
