@@ -18,4 +18,3 @@ CREATE TABLE `payments` (
 ALTER TABLE `users`
 ADD COLUMN `poids` FLOAT NOT NULL,
 ADD COLUMN `taille` FLOAT NOT NULL;
-
