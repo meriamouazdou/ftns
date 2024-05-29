@@ -64,6 +64,7 @@ feeling energized and motivated." />
         }
 
         .calculator {
+            top: 5cm;
             position: relative;
             left: -11%;
             padding: 33px;
@@ -72,9 +73,9 @@ feeling energized and motivated." />
             margin-top: -13%;
         }
 
-        .results {
+        .results {top: 15cm;
             margin-top: 0.5em;
-            text-align: center;
+            text-align: relative;
             padding: 13px;
         }
 
@@ -247,24 +248,11 @@ feeling energized and motivated." />
 </head>
 
 <body>
-    <!-- Further Code Herre -->
-    <div class="navbar">
-        <ul>
-            <li><img src="./images/logo.png" alt="logo" class="logo"></li>
-            <li style="margin-left: -38px;"><a href="home.html" class="home">Home</a></li>
-            <li><a href="home.html" class="home" id="ex">Exercise</a></li>
-            <li><a href="calculators.html" class="home" id="ex">Health Calculators</a></li>
-            <a href="favorites.html" class="home" id="ex">Go to Favorites</a>
-        </ul>
-    </div>
 
-    <div class="container">
 
-        <h1 class="sect1" id="ex-h1">Calorie Calculator</h1>
-        <h2 class="sect2cal">Calorie Calculator</h2>
-    </div>
+    
 
-    <div id="bmr-calculator" class="wrapper">
+    <div id="bmr-calculator" class="wrapper" style="top: 5cm;">
         <div class="calculator">
             <div class="choose-gender">
                 <div class="segmented-control"><input id="calc-gender-male" type="radio" name="gender" value="male"
@@ -285,7 +273,7 @@ feeling energized and motivated." />
             <label for="calc-cardio" id="calc-cardio_value">Cardio: 1 hour per week</label>
             <input id="calc-cardio" type="range" value="1" min="0" max="50">
         </div>
-        <div class="results">
+        <div class="results" >
             <div id="calc-target-gain">
                 To Gain Weight:<br>
                 <span>2700 calories</span>
