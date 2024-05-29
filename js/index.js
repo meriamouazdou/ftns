@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(data); // Message de débogage
             if (data.includes("Inscription réussie")) {
                 signupSection.style.display = "none";
-                paymentSection.style.display = "block";
                 // Afficher la pop-up d'inscription réussie
                 alert("Inscription réussie !");
             } else {
@@ -74,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(data); // Message de débogage
             if (data.includes("Connexion réussie")) {
                 authSection.style.display = "none";
-                paymentSection.style.display = "block";
                 // Afficher la pop-up de connexion réussie
                 alert("Connexion réussie !");
                 // Supprimer le bouton de connexion du header

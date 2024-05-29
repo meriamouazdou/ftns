@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *"); // Autoriser toutes les origines (à d
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); // Autoriser les méthodes POST, GET et OPTIONS
 header("Access-Control-Allow-Headers: Content-Type"); // Autoriser le type de contenu "Content-Type"
 
-include 'config.php';
+include ("include.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cardNumber = $_POST['cardNumber'];

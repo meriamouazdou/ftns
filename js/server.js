@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const isAuthenticated = true; // Simuler le succès de l'authentification
     if (isAuthenticated) {
       authSection.style.display = "none";
-      paymentSection.style.display = "block";
     } else {
       alert("Échec de l'authentification. Veuillez réessayer.");
     }

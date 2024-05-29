@@ -3,7 +3,8 @@ header("Access-Control-Allow-Origin: *"); // Autoriser toutes les origines (à d
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); // Autoriser les méthodes POST, GET et OPTIONS
 header("Access-Control-Allow-Headers: Content-Type"); // Autoriser le type de contenu "Content-Type"
 
-include 'config.php';
+include ("include.php");
+session_start();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $username = $_POST['username'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
